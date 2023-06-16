@@ -83,4 +83,6 @@ admin with ROLE_ADMIN
 mod with ROLE_MODERATOR and ROLE_USER
 green with ROLE_USER
 
+### The project should be running fine for the features
+
 Check users and user_roles tables
