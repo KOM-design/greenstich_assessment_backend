@@ -84,3 +84,4 @@ mod with ROLE_MODERATOR and ROLE_USER
 green with ROLE_USER
 
 Check users and user_roles tables
+### The project should be running for the given tasks.
