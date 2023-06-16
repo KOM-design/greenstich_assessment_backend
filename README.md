@@ -71,9 +71,13 @@ Define a filter that executes once per request. So we create AuthTokenFilter cla
 This class has 3 main funtions:
 
 getJwtFromCookies: get JWT from Cookies by Cookie name
+
 generateJwtCookie: generate a Cookie containing JWT from username, date, expiration, secret
+
 getCleanJwtCookie: return Cookie with null value (used for clean Cookie)
+
 getUserNameFromJwtToken: get username from JWT
+
 validateJwtToken: validate a JWT with a secret
 
 8. Define payloads for Authentication Controller
