@@ -59,18 +59,29 @@ RoleRepository
 
 3. Configure Spring Security
 Without WebSecurityConfigurerAdapter
+In security package, create WebSecurityConfig class.
 
-4. Implement UserDetails & UserDetailsService
+5. Implement UserDetails & UserDetailsService 
+If the authentication process is successful, we can get User’s information such as username, password, authorities from an Authentication object.
 
-5. Filter the Requests
+6. Filter the Requests
+Define a filter that executes once per request. So we create AuthTokenFilter class that extends OncePerRequestFilter and override doFilterInternal() method.
 
-6. Create JWT Utility class
+7. Create JWT Utility class
+This class has 3 main funtions:
 
-7. Define payloads for Authentication Controller
+getJwtFromCookies: get JWT from Cookies by Cookie name
+generateJwtCookie: generate a Cookie containing JWT from username, date, expiration, secret
+getCleanJwtCookie: return Cookie with null value (used for clean Cookie)
+getUserNameFromJwtToken: get username from JWT
+validateJwtToken: validate a JWT with a secret
 
-8. Create Spring Rest Controllers
+8. Define payloads for Authentication Controller
+create AuthEntryPointJwt class that implements AuthenticationEntryPoint interface. Then we override the commence() method.
 
-9. Run & Check
+9. Create Spring Rest Controllers
+
+10. Run & Check
 Run Spring Boot application with command: mvn spring-boot:run
 
 Let’s check H2 database with url: http://localhost:8080/h2-ui:
